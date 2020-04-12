@@ -40,7 +40,7 @@ body {background-image:url("images/back40.gif");}
     --purple: #6f42c1;
     --pink: #e83e8c;
     --red: #dc3545;
-    --orange: #f4623a;
+    --zhihuBlue: #f4623a;
     --yellow: #ffc107;
     --green: #28a745;
     --teal: #20c997;
@@ -63,6 +63,10 @@ body {background-image:url("images/back40.gif");}
     --breakpoint-xl: 1200px;
     --font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.selfAdded {
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 *,
@@ -2569,7 +2573,7 @@ textarea.form-control {
 
 .btn:focus, .btn.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(244, 98, 58, 0.25);
+    box-shadow: 0 0 0 0.2rem #4a89ef;
 }
 
 .btn.disabled, .btn:disabled {
@@ -2583,37 +2587,37 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #f4623a;
-    border-color: #f4623a;
+    background-color: #3687f7;
+    border-color: #fff;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #f24516;
-    border-color: #ee3e0d;
+    background-color: #3079df;
+    border-color: #fff;
 }
 
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #f24516;
-    border-color: #ee3e0d;
-    box-shadow: 0 0 0 0.2rem rgba(246, 122, 88, 0.5);
+    background-color: #4a89ef;
+    border-color: #3079df;
+    box-shadow: 0 0 0 0.2rem #4a89ef;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #f4623a;
-    border-color: #f4623a;
+    background-color: #4a89ef;
+    border-color: #4a89ef;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #ee3e0d;
-    border-color: #e23a0d;
+    background-color: #3079df;
+    border-color: #3079df;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(246, 122, 88, 0.5);
+    box-shadow: 0 0 0 0.2rem #4a89ef;
 }
 
 .btn-secondary {
@@ -6664,7 +6668,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #f4623a !important;
+    background-color: #3079df !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6735,6 +6739,10 @@ button.bg-light:focus {
 
 .bg-dark {
     background-color: #343a40 !important;
+}
+
+.bg-blue {
+ background-color: #427bd8 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10368,11 +10376,11 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-    color: #f4623a !important;
+    color: #4a89ef !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-    color: #d6370c !important;
+    color: #427bd8 !important;
 }
 
 .text-secondary {
@@ -10584,7 +10592,7 @@ html {
 hr.divider {
     max-width: 3.25rem;
     border-width: 0.2rem;
-    border-color: #f4623a;
+    border-color: #4a89ef;
 }
 
 hr.light {
@@ -10629,11 +10637,11 @@ hr.light {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-    color: #f4623a;
+    color: #427bd8;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active {
-    color: #f4623a !important;
+    color: #427bd8 !important;
 }
 
 @media (min-width: 992px) {
@@ -10673,7 +10681,7 @@ hr.light {
     }
 
     #mainNav.navbar-scrolled .navbar-brand:hover {
-        color: #f4623a;
+        color: #427bd8;
     }
 
     #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
@@ -10681,7 +10689,7 @@ hr.light {
     }
 
     #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-        color: #f4623a;
+        color: #427bd8;
     }
 }
 
@@ -10744,7 +10752,7 @@ header.masthead h1 {
     text-align: center;
     opacity: 0;
     color: #fff;
-    background: rgba(244, 98, 58, 0.9);
+    background: rgba(66,123,216,0.9);
     transition: opacity 0.25s ease;
     text-align: center;
 }
