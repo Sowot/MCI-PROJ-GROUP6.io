@@ -1,23 +1,19 @@
 @charset "UTF-8";
 
- /* id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式，HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 "#" 来定义
+/* id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式，HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 "#" 来定义
  #para1
 {
     text-align:center;
     color:red;
 } */
-
 /* class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用 */
 /* .center {text-align:center;} */
-
 /* 也可以指定特定的HTML元素使用class，在以下实例中, 所有的 p 元素使用 class="center" 让该元素的文本居中
 p.center {text-align:center;} */
-
 /* 外部样式表，适用于多个页面通用的效果，通过在head中引入地址：
 <head>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head> */
-
 /* 内部样式表，适用于独立的单个页面效果不需要复用的：
 <head>
 <style>
@@ -26,13 +22,10 @@ p {margin-left:20px;}
 body {background-image:url("images/back40.gif");}
 </style>
 </head> */
-
 /* 内联样式，会损失掉样式表的许多优势，请慎用这种方法，例如当样式仅需要在一个元素上应用一次时：
 <p style="color:sienna;margin-left:20px">这是一个段落。</p> */
-
 /* 多重样式：
 如果某些属性在不同的样式表中被同样的选择器定义，那么属性值将从更具体的样式表中更新参数； */
-
 /* 全局变量 */
 :root {
     --blue: #007bff;
@@ -198,13 +191,14 @@ a:hover {
     text-decoration: underline;
 }
 
+/* 这里定义的是当<a>标签没有href的时候的样式 */
 a:not([href]) {
-    color: inherit;
+    color: #fff;
     text-decoration: none;
 }
 
 a:not([href]):hover {
-    color: inherit;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -2591,10 +2585,24 @@ fieldset:disabled a.btn {
     border-color: #fff;
 }
 
+/* 自定义的but样式 */
+.btn-define {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
 .btn-primary:hover {
     color: #fff;
     background-color: #3079df;
     border-color: #fff;
+}
+
+/* 自定义的but样式 */
+.btn-define:hover {
+    color: #3687f7;
+    background-color: transparent;
+    border-color: #3687f7;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -6742,7 +6750,7 @@ button.bg-light:focus {
 }
 
 .bg-blue {
- background-color: #427bd8 !important;
+    background-color: #427bd8 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10612,8 +10620,18 @@ hr.light {
     border-radius: 10rem;
 }
 
+/* 自定义样式 */
+.btn-xl-define {
+    padding: 1.25rem 2.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0.5;
+    border-radius: 10rem;
+}
+
 .page-section {
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 #mainNav {
@@ -10752,7 +10770,7 @@ header.masthead h1 {
     text-align: center;
     opacity: 0;
     color: #fff;
-    background: rgba(66,123,216,0.9);
+    background: rgba(66, 123, 216, 0.9);
     transition: opacity 0.25s ease;
     text-align: center;
 }
