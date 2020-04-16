@@ -66,7 +66,12 @@
                             <a class="btn btn-define btn-xl-define js-scroll-trigger mt-2" href="#about">see objective</a>
                         </div>
                         <div class="align-items-center">
-                            <a class="btn btn-primary btn-xl js-scroll-trigger mt-2 ml-4">Start Creating</a>
+                            <div>
+                                <!-- 先定义button，用上预先设计好css的class类，同时该button整个区域点击都有效因此添加onclick -->
+                                <button class="btn btn-primary btn-xl js-scroll-trigger mt-2 ml-4" onclick="upfile.click()">Start Creating</button>
+                                <!-- 隐藏真正预设的input样式by visibility: hidden -->
+                                <input type="file" id="upfile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+                            </div>
                             <!-- 用small标签缩小文本；在css中 .p 是class用法且放在<>里面，small是标签用法直接双<> -->
                             <p class="selfAdded text-white-75 font-weight-light mt-2 ml-4"><small>It's free & no sign-up needed.</small></p>
                         </div>
@@ -168,28 +173,28 @@
                 </div>
             </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <h4 class="font-weight-bold">Jian GAO(a1758939)</h4>
-                        <ul class="list-unstyled">
-                            <li>Front-end Developer</li>
-                            <li>Project Manager</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <h4 class="font-weight-bold">Yanting LU(a1736740)</h4>
-                        <ul class="list-unstyled">
-                            <li>Front-end Developer</li>
-                            <li>Interface Developer</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6 text-center">
-                         <h4 class="font-weight-bold">Yanzi LIN(a1729081)</h4>
-                        <ul class="list-unstyled">
-                            <li>Back-end Developer</li>
-                        </ul>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h4 class="font-weight-bold">Jian GAO(a1758939)</h4>
+                    <ul class="list-unstyled">
+                        <li>Front-end Developer</li>
+                        <li>Project Manager</li>
+                    </ul>
                 </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h4 class="font-weight-bold">Yanting LU(a1736740)</h4>
+                    <ul class="list-unstyled">
+                        <li>Front-end Developer</li>
+                        <li>Interface Developer</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h4 class="font-weight-bold">Yanzi LIN(a1729081)</h4>
+                    <ul class="list-unstyled">
+                        <li>Back-end Developer</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
