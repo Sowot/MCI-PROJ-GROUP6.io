@@ -39,8 +39,8 @@
         </div>
     </nav>
 
-    <!-- upload-->
-    <section class="page-section" id="contact">
+    <!-- 1.submit前数据上传-->
+    <section class="page-section" id="uploadCSV">
         <div class="container">
             <!-- 用row+justify-content-center整体控制标题和内容整体居中 -->
             <div class="row justify-content-center">
@@ -50,7 +50,6 @@
                     <p class="text-muted">one file once & only .csv supported</p>
                 </div>
             </div>
-
             <!-- submit事件仅适用于form标签 -->
             <form class="row justify-content-center mt-5" id="csvFileUpload">
                 <div class="col-sm-12 text-center">
@@ -64,9 +63,47 @@
                 <!-- 上传csv -->
                 <div class="col-sm-12 mt-5 text-center mt-5">
                     <h4 class="font-weight-bold">Step 2 Upload your .csv file</h4>
-                    <button type="submit" class="btn btn-primary mt-3" data-toggle="button" aria-pressed="false">Submit</button>
+                    <button id="submitBtn" type="submit" class="btn btn-primary mt-3" data-toggle="button" aria-pressed="false">Submit</button>
                 </div>
             </form>
+        </div>
+    </section>
+
+    <!-- 2.submit后等待服务端的结果显示 -->
+    <section class="page-section" id="chartDisplay">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <h2 class="mt-5">Choose the analysed attributes</h2>
+                    <hr class="divider my-4" />
+                    <p class="text-muted">Data error inside will be displayed later on</p>
+                    <!-- 默认显示数据正在处理，得到服务端JSON后显示全部属性+数据存在问题的属性 -->
+                    <div class="mt-5" id="status">Processing the attributes...</div>
+                    <!-- 得到结果之后隐藏status并显示result_container，并把结果更新到result_container中显示 -->
+                    <div class="row justify-content-center mt-5" id="result_container">
+                        <div class="col-6 text-center">
+                            <div class="alert alert-success" role="alert">
+                                Valid Attributes [Choose & analyse]
+                            </div>
+                            <p id="validAttributes">ID, Name, Age, Income, City, Device, Last time login, University, Where's, Gneder, Tuition fee, Status, ID, Name, Age, Income, City, Device, Last time login, University, Where's, Gneder, Tuition fee, Status</p>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="alert alert-danger" role="alert">
+                                Invalid attributes with data error [Unable to use]
+                            </div>
+                            <p id="InvalidAttributes">ID, Name, Age, Income, City, Device, Last time login, University, Where's, Gneder, Tuition fee, Status, ID, Name, Age, Income, City, Device, Last time login, University, Where's, Gneder, Tuition fee, Status</p>
+                        </div>
+
+                    </div>
+                    <form>
+                        <div class="col form-group" id="chosenForm">
+                            <label class="mt-3" for="exampleFormControlTextarea1">Copy & paste attributes from valid ones to be analysed [Seperate by comma]</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2" id="submit_attributes">Analyse</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -86,20 +123,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script>
-        // $("#upload").click(function() {
-        //     $(this).hide();
-        // });
         // submit事件仅适用于form标签
-        $("#csvFileUpload").submit(function(e) {
-            $.ajax({
-                url: "https://这里预留的是后端服务器接受文件的地址",
-                type: "POST",
-                data: new FormData(this),
-                processData: false,
-                contentType: false
+        $("#submitBtn").click(function() {
+            $("#csvFileUpload").submit(function(e) {
+                // syntax: $.ajax({name:value, name:value, ... })
+                $.ajax({
+                    url: "https://服务端接受csv的地址",
+                    type: "POST",
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false
+                });
+                return false;
+                // 这里需要接受POST过去的csv用于返回JSON
+                // $.ajax({
+                //     url: 'http://server:25812/Services/AgileWays.Baseball.Service.svc/Teams?$format=json&$filter=yearID eq 1882',
+                //     type: 'GET',
+                //     dataType: 'jsonp',
+                //     cache: false,
+                //     jsonp: '$callback',
+                //     error: function(x, t, r) {
+                //         alert(x.response.message);
+                //     },
+                //     success: function(data) {
+                //         $.each(data.d.results, function(i, val) {
+                //             $("#results").append("<div>" + val.name + "</div>");
+                //         });
+                //     }
+                // });
             });
-            return false;
+            // 清除当前内容并显示结果内容
+            $("#uploadCSV").hide();
+            $("#chartDisplay").show();
         });
+        // 这里等待补充submit了attributes之后，新页面用于展示最后的table chart，需要对submit_attributes的$方法编写
     </script>
 </body>
 

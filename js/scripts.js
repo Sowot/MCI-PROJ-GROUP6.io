@@ -75,17 +75,3 @@ function attributeAppend() {
     // 放在页面id为jsonContainer的地方
     document.getElementById("jsonContainer").appendChild(btn);
 }
-    // $("#upload").click(function() {
-    //     $(this).hide();
-    // });
-    // submit事件仅适用于form标签
-    $("#2020data").submit(function(e) {
-        $.ajax({
-            url: "https://e0d92634.ngrok.io/test",
-            type: "POST",
-            data: new FormData(this),
-            processData: false,
-            contentType: false
-        });
-        return false;
-    });
