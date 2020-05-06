@@ -1,0 +1,92 @@
+<!-- 备注头尾的-和>中间不能有空格，否则容易失效代码段 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 描述 HTML 文档的元数据-->
+    <meta charset="utf-8" />
+    <!-- 给移动端使用-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CSV upload</title>
+    <!-- Font Awesome icons 用于页面的图标-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- HTML5 新的规定，crossorigin是可以允许本地获取到跨域脚本的错误信息 -- >
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <!-- rel是关联一个样式表(stylesheet)文档，它表示这个link在文档初始化时将被使用 stylesheet是外部加载的样式表-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- rel: 本HTML文档关联同目录下的css文件夹下的css文件-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Bootstrap网站，导航栏在您的应用或网站中作为导航页头的响应式基础组件-->
+    <!-- class说明这是个bootstrap定义好的通用&复用的类(navbar)，随后的属性都是其特征的参数-->
+    <!-- class 用于某一类元素，而id用于标识单独的特定的元素-->
+    <!-- HTML中用class负责管理，JS中用id负责管理-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <!-- div当做图层理解-->
+        <div class="container">
+            <!-- a 意味着超链接，用于从一个页面链接到另一个页面 -->
+            <!-- 对于span的用法暂时略有模糊 -->
+            <!-- 用于对MCI-PROJ Group#6点击时候回到首屏 -->
+            <a class="navbar-brand js-scroll-trigger text-dark" href="./index.html">MCI-PROJ Group#6</a>
+        </div>
+    </nav>
+
+    <!-- upload-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- 用row+justify-content-center整体控制标题和内容整体居中 -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mt-5">Upload your CSV file</h2>
+                    <hr class="divider my-4" />
+                    <p class="text-muted">one file once & only .csv supported</p>
+                </div>
+            </div>
+
+            <form class="row justify-content-center mt-5" id="2020data">
+                <div class="col-sm-12 text-center">
+                    <h4 class="font-weight-bold">Step 1 Choose your .csv file</h4>
+                    <!-- 选择csv -->
+                    <div class="custom-file col-sm-4 mt-3">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label text-left" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <!-- 上传csv -->
+                <div class="col-sm-12 mt-5 text-center mt-5">
+                    <h4 class="font-weight-bold">Step 2 Upload your .csv file</h4>
+                    <button type="submit" class="btn btn-primary mt-3" data-toggle="button" aria-pressed="false">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="bg-light py-5 fixed-bottom">
+        <div class="container">
+            <div class="small text-center text-muted">Copyright © 2020 - MCI-PROJ Group#6, The University of Adelaide</div>
+        </div>
+    </footer>
+
+    <!-- BODY中编写的都是HTML标签，JS很多时候需要操作这些元素 -->
+    <!-- 首先我们要保证元素加载成功，才可以在JS中获取到，所以我们通常会把JS放在BODY的末尾 -->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
