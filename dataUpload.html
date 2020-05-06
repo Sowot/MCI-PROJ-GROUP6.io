@@ -51,7 +51,8 @@
                 </div>
             </div>
 
-            <form class="row justify-content-center mt-5" id="2020data">
+            <!-- submit事件仅适用于form标签 -->
+            <form class="row justify-content-center mt-5" id="csvFileUpload">
                 <div class="col-sm-12 text-center">
                     <h4 class="font-weight-bold">Step 1 Choose your .csv file</h4>
                     <!-- 选择csv -->
@@ -84,9 +85,22 @@
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-
+    <script>
+        // $("#upload").click(function() {
+        //     $(this).hide();
+        // });
+        // submit事件仅适用于form标签
+        $("#csvFileUpload").submit(function(e) {
+            $.ajax({
+                url: "https://这里预留的是后端服务器接受文件的地址",
+                type: "POST",
+                data: new FormData(this),
+                processData: false,
+                contentType: false
+            });
+            return false;
+        });
+    </script>
 </body>
 
 </html>
