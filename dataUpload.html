@@ -87,7 +87,7 @@
                             <div class="alert alert-success" role="alert">
                                 Valid Attributes [Choose & analyse]
                             </div>
-                            <p id="validAttributes">Jan, Feb, Mar, Apr, May, Jun, Jul, Aug</p>
+                            <p id="validAttributes">month, precipitation</p>
                         </div>
                         <div class="col-6 text-center">
                             <div class="alert alert-danger" role="alert">
@@ -199,6 +199,7 @@ function chartReturn(){
     });
     chart.data(data);
     chart.scale('月均降雨量', {
+        alias: 'Precipitation/mm',
       nice: true,
     });
     chart.tooltip({
@@ -215,6 +216,9 @@ function chartReturn(){
           marginRatio: 0,
         },
       ]);
+      chart.axis('月均降雨量', {
+          title: {},
+      });
     chart.interaction('active-region');
     chart.render();
 }
